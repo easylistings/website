@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Listings - Display Your Properties. Define Your Brand.</title>
+
+
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Top Bar Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Google Material Symbols (for body icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+ 
+         <!-- Favicon -->
+  <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/fa62e06dd2b6ed2d1d9e77e5dd944bef2904d5d1.png">
+
+    <!-- Meta Tags -->
+<meta name="description" content="Easy Listings helps real estate agents create stunning, mobile-friendly property catalogs to capture leads automatically. Turn your property photos into a professional online gallery.">
+<meta name="keywords" content="real estate, property listings, real estate marketing, property catalog, lead generation, real estate agent tools">
+<meta name="author" content="Bebell Digital Solutions">
+<meta name="copyright" content="Copyright © 2025 Easy Listings. All Rights Reserved.">
+<meta name="revised" content="Tuesday, August 26, 2025">
+    
+
+    <!-- Open Graph / Facebook -->
+<meta property="og:type" content="english website">
+<meta property="og:url" content="https://easylistings.website/">
+<meta property="og:title" content="Easy Listings - Display Your Properties. Define Your Brand.">
+<meta property="og:description" content="Turn your chaotic property photos into a stunning, mobile-friendly catalog that captures leads automatically.">
+<meta property="og:image" content="https://bucket.mlcdn.com/a/3336/3336910/images/15f552b8aceb08a4b2d0cd73903208cfadd517af.png">
+
+    
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://easylistings.website/">
+<meta property="twitter:title" content="Easy Listings - Display Your Properties. Define Your Brand.">
+<meta property="twitter:description" content="Turn your chaotic property photos into a stunning, mobile-friendly catalog that captures leads automatically.">
+<meta property="twitter:image" content="https://bucket.mlcdn.com/a/3336/3336910/images/15f552b8aceb08a4b2d0cd73903208cfadd517af.png">
+
+    
+
+    <!-- Custom CSS & Color Variables -->
+
+
+    <style>
+        :root {
+            --primary: #DF1783;
+            --primary-light: #fdeefa;
+            --secondary: #2d3748;
+            --accent: #4fd1c5;
+            --text: #2d3748;
+            --text-light: #718096;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border-color: #e2e8f0;
+            --faq-bg: #2d3748;                      
+        }
+
+        .dark-mode {
+            --text: #f7fafc; 
+            --text-light: #a0aec0; 
+            --bg: #1a202c;
+            --primary-light: #1a202c;
+            --card-bg: #2d3748; 
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.2);
+            --border-color: #4a5568;
+            --faq-bg: #1a202c;  
+        }
+
+        html { 
+            box-sizing: border-box; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth; 
+        }
+
+        *, *:before, *:after { 
+            box-sizing: inherit; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        .top-menu-bar {
+            position: fixed; 
+            top: 2rem; 
+            left: 50%; 
+            transform: translateX(-50%);
+            width: calc(100% - 2rem); 
+            max-width: 1200px; 
+            z-index: 1100;
+            background-color: var(--card-bg); 
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color); 
+            border-radius: 12px;
+            padding: 0 1rem; 
+            transition: top 0.3s ease-in-out;
+        }
+        
+        .top-menu-bar.hidden { 
+            top: -80px; 
+        }
+        
+        .top-menu-content { 
+            height: 70px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem; 
+        }
+        
+        #appLogo { 
+            height: 40px; 
+            width: 40px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+        }
+        
+        #appBrandNameDisplay { 
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            color: var(--text); 
+        }
+        
+        .top-menu-actions { 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+        }
+
+        .fab {
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            background-color: var(--bg);
+            color: var(--text); 
+            border: 1px solid var(--border-color); 
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            cursor: pointer; 
+            transition: all 0.2s ease;
+        }
+        
+        .fab:hover { 
+            background-color: var(--border-color); 
+            transform: scale(1.1); 
+        }
+
+        .header-banner {
+            width: 100%; 
+            padding: 200px 2rem 5rem 2rem; 
+            text-align: center;
+            position: relative; 
+            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80'); 
+            background-size: cover; 
+            background-position: center;
+            color: white; 
+            overflow: hidden;
+        }
+        
+        .header-banner::before {
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0;
+            background-color: rgba(45, 55, 72, 0.7); 
+            z-index: 1;
+        }
+        
+        .header-content { 
+            position: relative; 
+            z-index: 2; 
+            max-width: 980px; 
+            margin: 0 auto; 
+        }
+
+        /* Badge hover effect */
+        .hero-badge { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            font-family: 'Caveat', cursive; 
+            font-size: 1.5rem;
+        }
+
+        .hero-badge:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 20px -10px var(--primary); 
+        }
+
+        /* Waving hand animation */
+        @keyframes wave { 
+            0%, 100% { transform: rotate(0deg); } 
+            25% { transform: rotate(20deg); } 
+            75% { transform: rotate(-15deg); } 
+        }
+
+        .waving-hand { 
+            display: inline-block; 
+            animation: wave 1.5s infinite; 
+            transform-origin: 70% 70%; 
+        }
+        
+        /* Text hover effect */
+        .hover-primary { 
+            transition: color 0.3s ease; 
+        }
+
+        .hover-primary:hover { 
+            color: var(--primary); 
+        }
+
+        .primary-btn {
+            background-color: var(--primary); 
+            color: white; 
+            transition: all 0.3s ease;
+        }
+        
+        .primary-btn:hover { 
+            background-color: #c71575; 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 20px -10px var(--primary); 
+        }
+
+
+        .accent-btn {
+    background-color: #c71575;
+    color: white;
+    transition: all 0.3s ease;
+       
+}
+
+.accent-btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px); 
+            box-shadow: 0 10px 20px -10px var(--primary); 
+}
+
+        .card {
+            background-color: var(--card-bg); 
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color); 
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); 
+        }
+        
+        .card-alt { 
+            background-color: #f9fafb; 
+        }
+        
+        .dark-mode .card-alt { 
+            background-color: #1f2937; 
+        }
+        
+        .dark-mode .card-highlighted-dark { 
+            background-color: #374151; 
+        }
+
+         /* Problem Card Styles */
+        .problem-card {
+            background-color: var(--primary-light, #1a202c);
+            border: 0px solid var(--problem-card-border, #000);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+        }
+        
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary-light);
+        }
+        
+        .problem-card-icon {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover .problem-card-icon {
+            animation: shake 0.5s ease;
+        }
+        
+        @keyframes shake {
+            0% { transform: translateX(0) rotate(0); }
+            20% { transform: translateX(-5px) rotate(-5deg); }
+            40% { transform: translateX(5px) rotate(5deg); }
+            60% { transform: translateX(-5px) rotate(-5deg); }
+            80% { transform: translateX(5px) rotate(5deg); }
+            100% { transform: translateX(0) rotate(0); }
+        }
+        
+        .problem-card-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--problem-card-text, var(--text));
+        }
+        
+        .problem-card-content {
+            color: var(--problem-card-text-light, var(--text-light));
+            flex-grow: 1;
+    align-items: center;
+    align-items: center;
+        }
+
+
+        h1, h2, h3 { 
+            color: var(--text); 
+        }
+        
+        p { 
+            color: var(--text-light); 
+        }
+        
+        .section-headline { 
+            color: var(--text); 
+            max-width: 980px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.1; 
+        }
+        
+        /* Video Modal Styles */
+        .video-modal-overlay {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            background: rgba(0,0,0,0.8);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 2000;
+            opacity: 0; 
+            visibility: hidden; 
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .video-modal-overlay.active { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+        
+        .video-modal-content {
+            background: var(--card-bg); 
+            padding: 20px; 
+            border-radius: 16px; 
+            max-width: 900px;
+            width: 90%; 
+            position: relative; 
+            transform: scale(0.9); 
+            transition: transform 0.3s ease;
+        }
+        
+        .video-modal-overlay.active .video-modal-content { 
+            transform: scale(1); 
+        }
+        
+        .video-modal-close {
+            position: absolute; 
+            top: -15px; 
+            right: -15px; 
+            width: 40px; 
+            height: 40px;
+            background: var(--primary); 
+            color: white; 
+            border: none; 
+            border-radius: 50%;
+            font-size: 20px; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            max-width: 100%; 
+            background: #000; 
+            border-radius: 8px;
+        }
+        
+        .video-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+        }
+
+        /* MacBook styles */
+        .macbook-wrapper { 
+            position: relative; 
+            background: transparent; 
+            padding: 0px; 
+            border-radius: 0px; 
+        }
+
+        .macbook-wrapper .macbook { 
+            padding: 4% 6%; 
+            margin: 0 auto; 
+            max-width: 2200px; 
+            background: transparent; 
+            border-radius: 0px; 
+        }
+
+        .macbook-wrapper .screen { 
+            background: #000; 
+            border-radius: 3% 3% 0.5% 0.5% / 5%; 
+            margin: 0 auto; 
+            position: relative; 
+            width: 80%; 
+        }
+
+        .macbook-wrapper .screen:before { 
+            border: 2px solid #cacacc; 
+            border-radius: 3% 3% 0.5% 0.5% / 5%; 
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset; 
+            content: ""; 
+            display: block; 
+            padding-top: 67%; 
+        }
+
+        .macbook-wrapper .viewport { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            top: 0; 
+            margin: 4.3% 3.2%; 
+            background: #F2F1FB; 
+            border-radius: 4px; 
+        }
+
+        .macbook-wrapper .base { 
+            position: relative; 
+            width: 100%; 
+            background: transparent; 
+            border-radius: 8px; 
+        }
+
+        .macbook-wrapper .base:before { 
+            content: ""; 
+            display: block; 
+            padding-top: 3.3%; 
+            background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%); 
+            border-radius: 0 0 10% 10%/ 0 0 50% 50%; 
+        }
+
+        .macbook-wrapper .notch { 
+            background: #ddd; 
+            border-radius: 0 0 7% 7% / 0 0 95% 95%; 
+            box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset; 
+            margin-left: auto; 
+            margin-right: auto; 
+            margin-top: -3.5%; 
+            z-index: 2; 
+            position: relative; 
+            width: 14%; 
+        }
+
+        .macbook-wrapper .notch:before { 
+            content: ""; 
+            display: block; 
+            padding-top: 10%; 
+        }
+
+        .macbook-wrapper .macbook .viewport { 
+            transition: background-position 20s ease; 
+            background-position: 0 0; 
+            background-size: 100% auto; 
+            overflow: hidden; 
+            cursor: pointer; 
+        }
+
+        .macbook-wrapper .macbook:hover .viewport { 
+            background-position: 0 100%; 
+        }
+
+        .macbook-wrapper .macbook .viewport:after { 
+            background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent); 
+            bottom: 0; 
+            content: ""; 
+            left: 0; 
+            position: absolute; 
+            right: 0; 
+            top: 0; 
+        }
+        
+        .material-symbols-outlined { 
+            vertical-align: middle; 
+        }
+
+        /* Back to top button */
+        #backToTopBtn {
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px;
+            width: 50px; 
+            height: 50px;
+            background-color: var(--primary); 
+            color: white;
+            border: none; 
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            cursor: pointer; 
+            z-index: 1000;
+            opacity: 0; 
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        }
+        
+        #backToTopBtn.show {
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0);
+        }
+
+        .bebell-footer p {
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .bebell-link {
+            color: #718096;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .bebell-link:hover {
+            color: #df1783;
+        }
+
+        .heart {
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* FAQ Component Section */
+        #faq {
+            background-color: var(--faq-bg);
+        }
+
+        .faq-question {
+            font-size: 1.25rem;
+            color: white !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-answer {
+            display: none;
+            color: var(--text-light);
+            padding-top: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        /* Active state when FAQ is open */
+        .faq-item.active .faq-answer {
+            display: block;
+            max-height: 200px;
+        }
+
+        .faq-item.active .material-symbols-outlined {
+            transform: rotate(180deg);
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            position: relative;
+            padding: 6rem 0;
+            overflow: hidden;
+            border-radius: 0px;
+            margin-bottom: 0rem;
+
+        }
+
+        /* Map Container */
+        .map-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(0.7) contrast(1.1) brightness(1) hue-rotate(280deg);
+        }
+
+        .map-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .testimonial-signature {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container { 
+                padding: 1rem; 
+            }
+            
+            .header-banner .controls-container .btn {
+                width: 100%;
+            }
+
+            .logo-container { 
+                max-width: 170px; 
+            }
+            
+            #appBrandNameDisplay {
+                font-size: 1.25rem;
+                max-width: 150px;
+            }
+
+            #primary-btn { 
+                display: none; 
+            }
+
+              .accent-btn {
+   margin: 20px;         
+}
+
+            .faq-question {
+                font-size: 1.125rem;
+                padding: 1.25rem;
+            }
+            
+            .top-menu-bar {
+                width: calc(100% - 1rem);
+            }
+
+           .fb-comments-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #appBrandNameDisplay {
+                font-size: 1rem;
+                max-width: 150px;
+            }
+            
+            .top-menu-bar {
+                width: calc(100% - 1rem);
+            }
+            
+            .header-banner {
+                padding: 150px 1rem 3rem 1rem;
+            }
+            
+            .hero-badge {
+                font-size: 1.25rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+            .accent-btn {
+               margin: 10px;         
+            }
+
+           .testimonial-signature {
+                font-size: 1.75rem;
+            }
+        }
+
+
+
+
+/* Facebook Comments Styling */
+.fb-comments-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fb-comments-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Dark mode support */
+.dark-mode .fb-comments-container {
+    background-color: #2d3748;
+}
+
+.dark-mode .fb-comments-title {
+    color: white;
+}
+
+/* Responsive adjustments for Facebook comments */
+@media (max-width: 768px) {
+    .fb-comments-title {
+        font-size: 1.25rem;
+    }
+    
+    .fb-comments-container {
+        padding: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+
+
+    .theme-image-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #theme-image, #theme-image-hover {
+        transition: opacity 0.3s ease;
+    }
+    
+    #theme-image-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    
+    .theme-image-container:hover #theme-image {
+        opacity: 0;
+    }
+    
+    .theme-image-container:hover #theme-image-hover {
+        opacity: 1;
+    }
+
+    </style>
+
+
+
+
+<!-- Facebook SDK -->
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
+
+
+
+
+</head>
+<body class="antialiased">
+    <!-- Top Menu Bar -->
+    <div class="top-menu-bar">
+        <div class="top-menu-content">
+            <div class="logo-container">
+                <img id="appLogo" src="https://bucket.mlcdn.com/a/3336/3336910/images/fa62e06dd2b6ed2d1d9e77e5dd944bef2904d5d1.png" alt="Easy Listings Logo">
+                <span id="appBrandNameDisplay">Easy Listings</span>
+            </div>
+
+
+            
+            <div class="top-menu-actions">
+                <div class="fab" title="Spanish / Español 🇪🇸" onclick="window.open('https://easylistings.github.io/website/spanish', '_self')"><i class="fa fa-globe"></i></div>
+                <div class="fab" title="Support" onclick="window.open('https://helpcenter.easylistings.website', '_blank')"><i class="fa fa-info-circle"></i></div>
+                <div class="fab" id="darkModeToggle" title="Toggle Theme" style="margin-right: 10px;"><i class="fas fa-moon"></i></div>
+                <a href="#pricing" class="primary-btn font-semibold px-4 py-2 rounded-lg text-sm hidden sm:block">Create Your Catalog</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="header-banner" id="mainHeader">
+        <div class="header-content">
+            <div class="hero-badge inline-block bg-[var(--primary)] text-white font-semibold px-4 py-2 rounded-full mb-6">
+                Hey There! <div class="waving-hand">👋</div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-white section-headline">Display Your Properties, Not Your Photo Album.</h1>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl mb-8 text-gray-200">
+                <span class="hover-primary"><strong>Easy Listings</strong></span> turns your chaotic images into a stunning, mobile-friendly catalog that captures leads automatically.<strong> Make it your own.</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#pricing" class="primary-btn text-lg font-bold px-8 py-4 rounded-lg w-full sm:w-auto">Grab My Lifetime Deal $49</a>
+                <button id="openVideoModal" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-lg font-semibold px-8 py-4 rounded-lg transition w-full sm:w-auto">Watch Demo Video</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Live Demo Laptop Container -->
+        <section class="py-16 md:py-20 text-center bg-[var(--bg)]">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 section-headline">Try <span class="hover-primary">Easy Listings</span> Live</h2>
+                <p class="mt-4">Click on the MacBook to visit our <strong class="hover-primary">Easy Listings</strong> Demo Website</p>
+                
+                <a href="https://bebell-digital-solutions.github.io/easy-listings/v04" target="_blank" class="block">
+                    <div class="macbook-wrapper">
+                        <div class="macbook">
+                            <div class="screen">
+                                <div class="viewport" style="background-image: url('https://cdn.shopify.com/s/files/1/0242/0175/6777/files/Macbook-Air-bebell-digital-solutions.github.io_3_copy.png?v=1755987678');">
+                                </div>
+                            </div>
+                            <div class="base"></div>
+                            <div class="notch"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    
+
+        <!-- Alternative Version -->
+  
+            <div class="p-8 md:p-12 mb-0">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-2">Trusted by Industry Leaders</h3>
+                    <p class="text-sm text-[var(--text-light)] max-w-3xl mx-auto">
+                        Our technology powers real estate professionals worldwide
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            
+<!-- Google -->
+                    <div class="logo-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
+                             alt="Google" 
+                             class="h-10 object-contain mx-auto">
+                    </div>
+
+
+
+
+                    
+                    <!-- Google Sheets -->
+                    <div class="logo-item">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/2cb4bb6a11eb0c8fd783e24b6e4cf3144af06679.png" 
+                             alt="Google Sheets" 
+                             class="h-14 object-contain mx-auto">
+                    </div>
+                    
+                    
+
+<!-- WhatsApp -->
+                    <div class="logo-item">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/879d9dfcf77ccc6eb5e173013f3ecae3372f0545.png" 
+                             alt="WhatsApp" 
+                             class="h-14 object-contain mx-auto">
+                    </div>
+
+
+                    
+                    <!-- Meta -->
+                    <div class="logo-item">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/707e380e0b4338a3c8a76c60fb416582ec3fbca4.png" 
+                             alt="Meta" 
+                             class="h-12 object-contain mx-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+         <!-- The Problem Section -->
+    <section class="py-16 md:py-24 bg-[var(--card-bg)]">
+        
+
+<div class="container mx-auto px-6 text-center">
+
+
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 section-headline">Is Your '<span class="hover-primary">Portfolio</span>' Holding You Back?</h2>
+
+            <p class="max-w-3xl mx-auto text-lg mb-12 text-[var(--text-light)]">Your listings deserve a better display. It's time your marketing reflected their true value.</p>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+
+
+                <!-- Problem 1 Card -->
+                <div class="problem-card rounded-xl p-6 text-center md:text-center">
+                    <div class="problem-card-icon bg-[var(--primary)] text-white rounded-full w-22 h-22 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <span class="material-symbols-outlined text-4xl">grid_view</span>
+                </div>
+                    <h3 class="problem-card-title">Static Grid ❌</h3>
+                    <p class="problem-card-content">Your Instagram feed is just a grid of similar-looking exteriors. Nothing stands out.</p>
+                </div>
+
+
+    
+                
+                <!-- Problem 2 Card -->
+                <div class="problem-card rounded-xl p-6 text-center md:text-center">
+                    <div class="problem-card-icon bg-[var(--primary)] text-white rounded-full w-22 h-22 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <span class="material-symbols-outlined text-4xl">sms</span>
+                </div>
+                    <h3 class="problem-card-title">WhatsApp Spam ❌</h3>
+                    <p class="problem-card-content">You send 24 photos one-by-one. Clients get overwhelmed and miss the best features.</p>
+                </div>
+
+                <!-- Problem 3 Card -->
+                <div class="problem-card rounded-xl p-6 text-center md:text-center">
+                    <div class="problem-card-icon bg-[var(--primary)] text-white rounded-full w-22 h-22 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <span class="material-symbols-outlined text-4xl">link_off</span>
+                </div>
+                    <h3 class="problem-card-title">Forgotten Link ❌</h3>
+                    <p class="problem-card-content">You share an ugly, generic MLS link that tells clients nothing about your brand.</p>
+                </div>
+                
+                <!-- Problem 4 Card -->
+                <div class="problem-card rounded-xl p-6 text-center md:text-center">
+                    <div class="problem-card-icon bg-[var(--primary)] text-white rounded-full w-22 h-22 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <span class="material-symbols-outlined text-4xl">move_to_inbox</span>
+                </div>
+                    <h3 class="problem-card-title">Lost Leads ❌</h3>
+                    <p class="problem-card-content">Inquiries get buried in DMs and texts, never making it to your organized list.</p>
+                </div>
+            
+    </div>
+
+
+
+    
+
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-14">
+    <a href="#pricing" class="primary-btn text-lg font-bold px-8 py-4 rounded-lg w-full sm:w-auto text-center">
+        Grab My Lifetime Deal $49
+    </a>
+    
+    <a href="https://bebell-digital-solutions.github.io/easy-listings/v04" 
+       class="accent-btn text-lg font-bold px-8 py-4 rounded-lg w-full sm:w-auto text-center flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        See It Live On Any Device
+    </a>
+</div>
+
+<p class="text-center mt-4 text-[var(--text-light)]">🛡️ Get Your Money Back in <strong>7 days</strong> if you ever change your mind.</p>
+
+    </div>
+
+    </section>
+
+
+
+        <!-- The Solution Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center max-w-6xl">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 section-headline text-left">Give Every <span class="hover-primary">Listing</span> the <span class="hover-primary">Spotlight</span> It Deserves</h2>
+                    <p class="text-lg mb-8"><strong>Easy Listings</strong> is the simplest way to build a beautiful, branded gallery for your catalog. <strong>No web design skills needed</strong>—just your best photos and your Lifetime Access to our powerful platform.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="material-symbols-outlined text-3xl">photo_library</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Store, Display & Organize</h3>
+                                <p>Your properties in a beautiful easy to search and filter, full-screen and mobile friendly catalog.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="material-symbols-outlined text-3xl">share</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Share & Promote</h3>
+                                <p>One elegant link everywhere—WhatsApp, Instagram, email, and more. </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="material-symbols-outlined text-3xl">fact_check</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Capture & Manage</h3>
+                                <p>Leads effortlessly with built-in forms that sync to your Google spreadsheet database.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="material-symbols-outlined text-3xl">auto_awesome</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Impress & Convert</h3>
+                                <p>Leads into clients with a professional presentation that builds trust from the first click.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                         <!-- Contenedor de imagen con cambio basado en tema -->
+               <div class="theme-image-container">
+            <img 
+                id="theme-image" 
+                src="https://cdn.shopify.com/s/files/1/0242/0175/6777/files/Easy_Listing_Assets_1.gif?v=1756263558" 
+                alt="A beautiful woman holding showing her Easy Listings Catalog on a device" 
+                class="rounded-xl w-full theme-image"
+            >
+            <img 
+                id="theme-image-hover" 
+                src="https://bucket.mlcdn.com/a/3336/3336910/images/c98a9260f527aa464d154fe214b33d494149aee4.png" 
+                alt="Display of Easy Listings' Platform in a Mobile Deivice Screen" 
+                class="rounded-xl w-full theme-image"
+            >
+        </div>
+            </div>
+        </section>
+
+
+
+        <!-- How It Works Section -->
+        <section class="py-16 md:py-24 bg-[var(--card-bg)]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 section-headline">Create Your <span class="hover-primary">Gallery</span> In Three Simple Steps</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-6xl mx-auto">
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-[var(--primary)] border-2 border-[var(--primary)] rounded-full w-12 h-12 flex items-center justify-center mb-4">1</div>
+                        <h3 class="text-2xl font-bold mb-2">🎨 Set Up Your Account</h3>
+                        <p>Connect your Google Spreadsheet Database and Customize Your Catalog / Gallery with your logo, brand colors, images and contact information.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-[var(--primary)] border-2 border-[var(--primary)] rounded-full w-12 h-12 flex items-center justify-center mb-4">2</div>
+                        <h3 class="text-2xl font-bold mb-2">🖼️ Add Your Listings</h3>
+                        <p>Add your listings from your Google Spreadsheet Database or create new ones right from your Admin panel. Upload Images, setup details, tags, categories, CTAs & more.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-[var(--primary)] border-2 border-[var(--primary)] rounded-full w-12 h-12 flex items-center justify-center mb-4">3</div>
+                        <h3 class="text-2xl font-bold mb-2">💰 Share & Capture</h3>
+                        <p>Copy, Share & Promote your unique link on your favorite social media platforms. Capture Leads through our built-in lead forms automatically, 24/7.</p>
+                    </div>
+                </div>
+    </div>
+                
+                  <div class="flex flex-col sm:flex-row justify-center items-center mt-8 m-10 gap-4">
+    <button id="openVideoModal2" class="accent-btn text-lg font-semibold px-8 py-4 rounded-lg transition w-full m-8 sm:w-auto flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        Watch Demo Video
+    </button>
+</div>
+                
+        
+        </section>
+
+
+
+
+
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 md:py-24 relative">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://bucket.mlcdn.com/a/3336/3336910/images/13fad95b7359bb8f0168963927fe445e15cc8f4e.png');"></div>
+            <div class="container mx-auto px-6 relative">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white section-headline">A Display Engineered for <span class="hover-primary">Conversion</span></h2>
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Core Features Included</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--accent)] mt-1 mr-3">check_circle</span><div><strong>Gallery-Worthy Design:</strong> Mobile-optimized templates that make your images the hero.</div></li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--accent)] mt-1 mr-3">check_circle</span><div><strong>Automatic Lead Sync:</strong> Form submissions land in your Google Sheet in real time.</div></li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--accent)] mt-1 mr-3">check_circle</span><div><strong>One Link to Share:</strong> A single, elegant URL for all your marketing.</div></li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--accent)] mt-1 mr-3">check_circle</span><div><strong>Built-in Branding:</strong> Add your logo and colors to every page.</div></li>
+                        </ul>
+                    </div>
+                     <div class="card card-alt p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Powerful Features</h3>
+                        <p class="mb-4">Available in your dashboard after purchase:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--primary)] mt-1 mr-3">rocket_launch</span><div><strong>WhatsApp Link Generator:</strong> Create click-to-chat links that boost client response rates.</div></li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--primary)] mt-1 mr-3">rocket_launch</span><div><strong>Automation Templates:</strong> Connect your sheet to your CRM with pre-built Zapier flows.</div></li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--primary)] mt-1 mr-3">rocket_launch</span><div><strong>Email Nurture Sequences:</strong> Pre-written templates to automatically follow up with new leads.</div></li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-[var(--primary)] mt-1 mr-3">rocket_launch</span><div><strong>Custom Domain (White Label):</strong> Host on listings.yourname.com for the ultimate touch.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 p-10 md:py-24 bg-[var(--card-bg)]">
+            
+
+<div class="container mx-auto mt-5 px-6 text-center">
+    <!-- Centered image with 220px width and auto height -->
+    <div class="flex justify-center mb-6">
+        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/3a597ee58cfe97b73ddf336398432a8e6c44746a.png" 
+             alt="Listing display" 
+             class="w-56 h-auto">
+  
+    </div>
+    
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 section-headline">Display Your Listings The Right Way. The Only Way.</h2>
+    <p class="text-3xl md:text-4xl font-bold mb-4 text-lg font-extrabold text-[var(--text-light)] section-headline">YOURS FOREVER</p>
+</div>
+
+
+
+
+
+    <!-- Pricing Tables Section -->
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12">
+
+
+
+
+                    <!-- Lifetime Access Plan -->
+                    <div class="card rounded-xl p-8 text-left flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">Lifetime Access 🎉</h3>
+                        <p class="text-4xl font-extrabold mb-4">$49 <span class="text-lg font-normal text-[var(--text-light)]">Forever.</span></p>
+                        <ul class="space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> <strong>Limited to 1 User Account</strong></li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Create 1 Gallery</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Create Unlimited Property Listings</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Real-Time Google Sheets Lead Syncing</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Add Your Logo & Brand Colors</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Public, Shareable Gallery Link</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Standard Support</li>
+                        </ul>
+                        <a href="#" class="primary-btn text-center font-bold py-3 px-6 rounded-lg w-full">Get Lifetime Access</a>
+                    </div>
+                    
+
+
+
+
+
+
+                    <!-- White Label Plan Card with inline style -->
+                    <div class="card card-secondary rounded-xl p-8 text-left border-2 border-[var(--primary)] relative flex flex-col" id="whiteLabelCard" style="--light-bg: #fdeefa; --dark-bg: #1a202c; background: var(--light-bg);">
+                        <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[var(--primary)] text-white text-sm font-bold px-5 py-1 rounded-full whitespace-nowrap">SERIOUS BRANDS</span>
+                        <h3 class="text-2xl font-bold mb-2">White Label Plan 🎯</h3>
+                        <p class="text-4xl font-extrabold mb-4">$149 <span class="text-lg font-normal text-[var(--text-light)]">Forever.</span></p>
+                        <ul class="space-y-3 mb-8 flex-grow">
+                            <li class="font-bold">Everything in Lifetime Access, Plus:</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> <strong>Limited to 1 User Account</strong></li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Create Unlimited Property Listings</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Remove "Powered by Easy Listings"</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Use Your Own Custom Domain / Subdomain</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Priority Setup Assistance</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Advanced Lead Management Tools</li>
+   <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Automation Templates</li>
+                        </ul>
+                        <a href="#" class="primary-btn text-center font-bold py-3 px-6 rounded-lg w-full">Go White Label</a>
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Agency Plan -->
+                    <div class="card rounded-xl p-8 text-left flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">Agency Plan 🚀</h3>
+                        <p class="text-4xl font-extrabold mb-4">$499 <span class="text-lg font-normal text-[var(--text-light)]">Forever.</span></p>
+                        <ul class="space-y-3 mb-8 flex-grow">
+                            <li class="font-bold">Everything in White Label, Plus:</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Your Own Branding</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Unlimited User Accounts</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Create Unlimited Property Galleries</li>
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Create Unlimited Property Listings</li>
+
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Advanced User Management Dashboard</li>
+
+                            <li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2">check</span> Live Chat Widget</li>
+                        </ul>
+                        <a href="#" class="primary-btn text-center font-bold py-3 px-6 rounded-lg w-full">Get Agency Plan</a>
+                    </div>
+                </div>
+            </div>
+    
+
+
+
+
+
+
+        <!-- Payment Methods Section -->
+    
+
+            <div class="container mx-auto px-4 mt-14">
+                <h2 class="text-2xl font-bold text-center mb-4 text-[var(--text)]">We Accept All Major Payment Methods Through PayPal</h2>
+                <p class="text-center mb-8 text-[var(--text-light)]">Secure payments with 256-bit encryption</p>
+                
+                <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                    <!-- PayPal -->
+                    <div class="flex justify-center mb-10">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/bc004fca5ca0effdca83046ae99ad68e2da46bca.png" 
+                             alt="PayPal" 
+                             class="max-w-[300px] h-auto mx-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 md:py-24 bg-[var(--secondary)] text-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-headline" style="color: white;">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item border border-[var(--border-color)] rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg">
+                            <span>What payment methods do you accept?</span>
+                            <span class="material-symbols-outlined transform transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-[var(--text-light)]">
+                            <p>We accept all major credit cards and PayPal for secure and easy transactions.</p>
+                        </div>
+                    </div>
+
+
+                 <!-- FAQ Item 2 -->
+                    <div class="faq-item border border-[var(--border-color)] rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg">
+                            <span>Is there a money-back guarantee?</span>
+                            <span class="material-symbols-outlined transform transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-[var(--text-light)]">
+                            <p>Absolutely! We offer a no-questions-asked 7-Day Money Back Guarantee!! If you're not satisfied, we'll refund your purchase.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item border border-[var(--border-color)] rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg">
+                            <span>Can I upgrade my plan later?</span>
+                            <span class="material-symbols-outlined transform transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-[var(--text-light)]">
+                            <p>Yes, you can upgrade from the Lifetime Access plan to the White Label or Agency plan at any time from your dashboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item border border-[var(--border-color)] rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg">
+                            <span>Do I need technical skills to use this?</span>
+                            <span class="material-symbols-outlined transform transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-[var(--text-light)]">
+                            <p>Not at all. Easy Listings is designed to be incredibly simple. If you can upload a photo, you can create a beautiful listing page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Testimonial Section -->
+        <section class="testimonial-section">
+            
+
+
+<!-- Map Container -->
+            <div class="map-container">
+                <iframe
+                    src="https://maps.google.com/maps?q=Santo%20Domingo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    class="map-iframe"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+                <div class="map-overlay"></div>
+
+            </div>
+
+
+            <!-- Content Container -->
+            <div class="container mx-auto px-6  max-w-4xl text-center relative z-10">
+                <h2 class="text-white text-3xl md:text-4xl font-bold text-center mb-12 section-headline">They Displayed, <span class="hover-primary">They Impressed</span>, They Closed</h2>
+                
+
+<div class="card rounded-xl p-14 md:p-20 bg-gradient-to-b from-[#DF1783] to-[#DF1783] border-0 shadow-xl">
+                    
+
+<img src="https://bucket.mlcdn.com/a/3336/3336910/images/7df974a7f62f6085550d30ad893258cee11795eb.png" alt="Luxury Property Specialist Carla M." class="w-24 h-24 rounded-full mx-auto mb-6">
+                    <p class="text-xl text-white md:text-2xl italic mb-6">"I used to dread sending listings to high-value clients. <span class="hover-primary">Easy Listings</span> changed everything. Now I display my properties in a gallery that rivals top agencies. The automatic lead capture is the hidden gem—it organized my workflow completely."</p>
+                    <p class="testimonial-signature">Elizabeth Then, Luxury Property Specialist</p>
+            
+
+
+<!-- Facebook Comments Widget in card-->
+            <div class="fb-comments-container mt-8 pt-6 border-t border-white/20 bg-white">
+                <h3 class="fb-comments-title">Share A Comment with the Community</h3>
+                <div class="fb-comments" data-href="https://easylistings.website" data-width="100%" data-numposts="5"></div>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-[var(--secondary)] text-white pt-6">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/fa62e06dd2b6ed2d1d9e77e5dd944bef2904d5d1.png" alt="Easy Listings Logo" class="h-10 w-10 rounded-lg">
+                        <span class="text-xl font-bold">Easy Listings</span>
+                    </div>
+                    <p class="text-[var(--text-light)]">Display Your Properties. Define Your Brand.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-[var(--text-light)] hover:text-[var(--primary)] transition">Features</a></li>
+                        <li><a href="#pricing" class="text-[var(--text-light)] hover:text-[var(--primary)] transition">Pricing</a></li>
+                        <li><a href="#" class="text-[var(--text-light)] hover:text-[var(--primary)] transition">Login</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-[var(--text-light)] hover:text-[var(--primary)] transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-[var(--text-light)] hover:text-[var(--primary)] transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:hello@easylistings.website" class="text-[var(--text-light)] hover:text-[var(--primary)] transition">hello@easylistings.website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 py-6">
+            <p class="text-center text-sm text-[var(--text-light)] mt-0 ">Copyright &copy; 2025 Easy Listings • All rights reserved.</p>            
+            <div class="bebell-footer mb-6 p-0 rounded-lg max-w-md mx-auto">
+                <p class="m-0">
+                    Developed with <span class="heart">💖</span> by 
+                    <a href="https://bebelldigitalsolutions.com" class="bebell-link font-medium text-[var(--text-light)] dark:text-gray-300" target="_blank" rel="noopener">
+                        Bebell Digital Solutions
+                    </a>.
+                    <br>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    
+
+    <!-- Video Modal 1 (Hero Section) -->
+    <div id="videoModal" class="video-modal-overlay">
+        <div class="video-modal-content">
+            <button id="closeVideoModal" class="video-modal-close">&times;</button>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a href="#pricing" class="primary-btn text-center font-bold py-3 px-6 rounded-lg w-full mt-6 block">Grab Your Lifetime Deal Now</a>
+        </div>
+    </div>
+
+    <!-- Video Modal 2 (How It Works Section) -->
+    <div id="videoModal2" class="video-modal-overlay">
+        <div class="video-modal-content">
+            <button id="closeVideoModal2" class="video-modal-close">&times;</button>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a href="#pricing" class="primary-btn text-center font-bold py-3 px-6 rounded-lg w-full mt-6 block">Grab Your Lifetime Deal Now</a>
+        </div>
+    </div>
+
+
+
+    
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            const icon = darkModeToggle.querySelector('i');
+
+            // Theme configuration with image URLs
+            const themeImages = {
+                light: "https://cdn.shopify.com/s/files/1/0242/0175/6777/files/Easy_Listing_Assets_1.gif?v=1756263558",
+                dark: "https://cdn.shopify.com/s/files/1/0242/0175/6777/files/Easy_Listing_Assets.gif?v=1756263088"
+            };
+
+            // Function to update image based on current theme
+            function updateThemeImage() {
+                const imageElement = document.getElementById('theme-image');
+                const isDarkMode = body.classList.contains('dark-mode');
+                
+                // Update the image based on theme
+                imageElement.src = isDarkMode ? themeImages.dark : themeImages.light;
+            }
+
+            // Initialize theme based on localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+
+            // Update the image on initial load
+            updateThemeImage();
+
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
+                
+                // Update the image when theme changes
+                updateThemeImage();
+            });
+
+            // Hide/show top menu bar and back to top button on scroll
+            const topMenuBar = document.querySelector('.top-menu-bar');
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    topMenuBar.classList.add('hidden');
+                } else {
+                    topMenuBar.classList.remove('hidden');
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+
+                // Back to top button logic
+                if (scrollTop > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            // --- Video Modal 1 Logic ---
+            const openModalBtn = document.getElementById('openVideoModal');
+            const closeModalBtn = document.getElementById('closeVideoModal');
+            const videoModal = document.getElementById('videoModal');
+
+            if (openModalBtn) {
+                openModalBtn.addEventListener('click', () => {
+                    videoModal.classList.add('active');
+                });
+            }
+
+            const closeModal = () => {
+                videoModal.classList.remove('active');
+                // Stop the video from playing
+                const iframe = videoModal.querySelector('iframe');
+                const src = iframe.src;
+                iframe.src = src;
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
+            
+            if (videoModal) {
+                videoModal.addEventListener('click', (e) => {
+                    if (e.target === videoModal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // --- Video Modal 2 Logic ---
+            const openModalBtn2 = document.getElementById('openVideoModal2');
+            const closeModalBtn2 = document.getElementById('closeVideoModal2');
+            const videoModal2 = document.getElementById('videoModal2');
+
+            if (openModalBtn2) {
+                openModalBtn2.addEventListener('click', () => {
+                    videoModal2.classList.add('active');
+                });
+            }
+
+            const closeModal2 = () => {
+                videoModal2.classList.remove('active');
+                // Stop the video from playing
+                const iframe = videoModal2.querySelector('iframe');
+                const src = iframe.src;
+                iframe.src = src;
+            }
+
+            if (closeModalBtn2) {
+                closeModalBtn2.addEventListener('click', closeModal2);
+            }
+
+            if (videoModal2) {
+                videoModal2.addEventListener('click', (e) => {
+                    if (e.target === videoModal2) {
+                        closeModal2();
+                    }
+                });
+            }
+            
+            // Back to top click listener
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // FAQ toggle functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            if (faqItems.length > 0) {
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    
+                    question.addEventListener('click', () => {
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        item.classList.toggle('active');
+                    });
+                });
+            }
+            
+            // Function to update the card background based on theme
+            function updateCardBackground() {
+                const card = document.getElementById('whiteLabelCard');
+                if (!card) return;
+                
+                // Check if dark mode is active
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                
+                // Set the background based on the theme
+                if (isDarkMode) {
+                    card.style.background = 'var(--dark-bg)';
+                } else {
+                    card.style.background = 'var(--light-bg)';
+                }
+            }
+
+            // Initialize when DOM is loaded
+            updateCardBackground();
+            
+            // Create a MutationObserver to watch for theme changes
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class') {
+                        updateCardBackground();
+                    }
+                });
+            });
+            
+            // Start observing the body for class changes
+            observer.observe(document.body, { attributes: true });
+        });
+    </script>
+</body>
+</html>
